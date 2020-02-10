@@ -14,8 +14,10 @@ import {
 import background from "../../../assets/images/background-login.jpg";
 import logo from "../../../assets/images/logo/logo-vermelho.png";
 
-export default function Login() {
+export default function Login({ navigation }) {
   const passwordRef = useRef();
+
+  const { navigate } = navigation;
 
   return (
     <Background source={background}>
@@ -39,7 +41,7 @@ export default function Login() {
             secureTextEntry
             ref={passwordRef}
           />
-          <SubmitButton onPress={() => {}}>Entrar</SubmitButton>
+          <SubmitButton onPress={() => navigate("App")}>Entrar</SubmitButton>
           <Link onPress={() => {}}>
             <LinkText>Esqueci minha senha</LinkText>
           </Link>

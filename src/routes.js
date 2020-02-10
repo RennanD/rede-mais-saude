@@ -7,8 +7,19 @@ import Home from "./screens/Home";
 export default createAppContainer(
   createSwitchNavigator({
     Login,
-    App: createStackNavigator({
-      Home
-    })
+    App: createStackNavigator(
+      {
+        Home
+      },
+      {
+        defaultNavigationOptions: {
+          headerStyle: {
+            backgroundColor: "#be2223",
+            height: 120
+          },
+          headerTintColor: "#fff"
+        }
+      }
+    )
   })
 );
