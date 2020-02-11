@@ -15,8 +15,10 @@ export default createAppContainer(
         defaultNavigationOptions: {
           headerStyle: {
             backgroundColor: "#be2223",
-            height: 120
+            height: 120,
+            alignItems: "center"
           },
+          headerTitle: false,
           headerTintColor: "#fff"
         }
       }

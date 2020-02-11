@@ -1,9 +1,31 @@
 import React from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { TouchableOpacity, View } from "react-native";
 
-import { Container, SliderShow, Row, Option, Menu, Label } from "./styles";
+import {
+  Container,
+  SliderShow,
+  Row,
+  Option,
+  Menu,
+  Label,
+  Icon,
+  Logout,
+  LogoutText,
+  Avatar,
+  Header,
+  Profile
+} from "./styles";
 
 import head from "../../../assets/images/banner-promoções.jpg";
+
+import sair from "../../../assets/images/icons/sair.png";
+
+import credenciados from "../../../assets/images/icons/credenciados.png";
+import carteirinha from "../../../assets/images/icons/carteirinha.png";
+import manuais from "../../../assets/images/icons/manuais.png";
+import noticias from "../../../assets/images/icons/noticias.png";
+import prescricoes from "../../../assets/images/icons/prescricoes.png";
+import contatos from "../../../assets/images/icons/contatos.png";
 
 export default function Home() {
   return (
@@ -12,37 +34,55 @@ export default function Home() {
       <Menu>
         <Row>
           <Option>
-            <MaterialCommunityIcons name="google-maps" size={28} color="#fff" />
+            <Icon source={credenciados} />
             <Label>Redes credenciadas</Label>
           </Option>
           <Option>
-            <MaterialCommunityIcons
-              name="account-card-details"
-              size={28}
-              color="#fff"
-            />
+            <Icon source={carteirinha} />
             <Label>Carteirinha virtual</Label>
+          </Option>
+          <Option>
+            <Icon source={manuais} />
+            <Label>Manuais e Documentos</Label>
           </Option>
         </Row>
         <Row>
           <Option>
-            <MaterialCommunityIcons name="google-maps" size={28} color="#fff" />
-            <Label>Redes credenciadas</Label>
+            <Icon source={noticias} />
+            <Label>Notícias</Label>
           </Option>
           <Option>
-            <MaterialCommunityIcons
-              name="account-card-details"
-              size={28}
-              color="#fff"
-            />
-            <Label>Carteirinha virtual</Label>
+            <Icon source={prescricoes} />
+            <Label>Prescrições</Label>
+          </Option>
+          <Option>
+            <Icon source={contatos} />
+            <Label>Contatos</Label>
           </Option>
         </Row>
       </Menu>
       <Logout>
-        <Icon />
-        <LogoutText></LogoutText>
+        <Icon source={sair} />
+        <LogoutText>Sair</LogoutText>
       </Logout>
     </Container>
   );
 }
+
+Home.navigationOptions = ({}) => ({
+  headerLeft: () => (
+    <Header>
+      <TouchableOpacity>
+        <Avatar
+          source={{
+            uri: "https://avatars3.githubusercontent.com/u/15038553?s=460&v=4"
+          }}
+        />
+      </TouchableOpacity>
+      <View>
+        <Profile>Olá,</Profile>
+        <Profile>Rennan Douglas</Profile>
+      </View>
+    </Header>
+  )
+});
