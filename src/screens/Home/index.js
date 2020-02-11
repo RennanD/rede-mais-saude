@@ -26,6 +26,7 @@ import manuais from "../../../assets/images/icons/manuais.png";
 import noticias from "../../../assets/images/icons/noticias.png";
 import prescricoes from "../../../assets/images/icons/prescricoes.png";
 import contatos from "../../../assets/images/icons/contatos.png";
+import mensagem from "../../../assets/images/icons/mensagem.png";
 
 export default function Home() {
   return (
@@ -69,10 +70,10 @@ export default function Home() {
   );
 }
 
-Home.navigationOptions = ({}) => ({
+Home.navigationOptions = ({ navigation }) => ({
   headerLeft: () => (
     <Header>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
         <Avatar
           source={{
             uri: "https://avatars3.githubusercontent.com/u/15038553?s=460&v=4"
@@ -83,6 +84,13 @@ Home.navigationOptions = ({}) => ({
         <Profile>Olá,</Profile>
         <Profile>Rennan Douglas</Profile>
       </View>
+    </Header>
+  ),
+  headerRight: () => (
+    <Header>
+      <TouchableOpacity>
+        <Icon source={mensagem} />
+      </TouchableOpacity>
     </Header>
   )
 });
