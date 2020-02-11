@@ -4,6 +4,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import Login from "./screens/Login";
 import Home from "./screens/Home";
 import Profile from "./screens/Profile";
+import Document from "./screens/Document";
 
 export default createAppContainer(
   createSwitchNavigator({
@@ -11,7 +12,8 @@ export default createAppContainer(
     App: createStackNavigator(
       {
         Home,
-        Profile
+        Profile,
+        Document
       },
       {
         defaultNavigationOptions: {

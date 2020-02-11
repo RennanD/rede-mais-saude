@@ -10,7 +10,7 @@ export const Avatar = styled.Image`
   height: 50px;
   width: 50px;
   border-radius: 25px;
-  border: 2px solid #eee;
+  border: 2px #eee;
 `;
 
 export const Profile = styled.Text`

@@ -1,4 +1,5 @@
 import React from "react";
+
 import { TouchableOpacity, View } from "react-native";
 
 import {
@@ -28,7 +29,7 @@ import prescricoes from "../../../assets/images/icons/prescricoes.png";
 import contatos from "../../../assets/images/icons/contatos.png";
 import mensagem from "../../../assets/images/icons/mensagem.png";
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
     <Container>
       <SliderShow source={head} />
@@ -38,24 +39,29 @@ export default function Home() {
             <Icon source={credenciados} />
             <Label>Redes credenciadas</Label>
           </Option>
-          <Option>
+
+          <Option onPress={() => navigation.navigate("Document")}>
             <Icon source={carteirinha} />
             <Label>Carteirinha virtual</Label>
           </Option>
+
           <Option>
             <Icon source={manuais} />
             <Label>Manuais e Documentos</Label>
           </Option>
         </Row>
+
         <Row>
           <Option>
             <Icon source={noticias} />
             <Label>Notícias</Label>
           </Option>
+
           <Option>
             <Icon source={prescricoes} />
             <Label>Prescrições</Label>
           </Option>
+
           <Option>
             <Icon source={contatos} />
             <Label>Contatos</Label>
