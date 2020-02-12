@@ -35,7 +35,7 @@ export default function Home({ navigation }) {
       <SliderShow source={head} />
       <Menu>
         <Row>
-          <Option>
+          <Option onPress={() => navigation.navigate("Providers")}>
             <Icon source={credenciados} />
             <Label>Redes credenciadas</Label>
           </Option>

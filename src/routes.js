@@ -1,10 +1,13 @@
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
+import { createMaterialTopTabNavigator } from "react-navigation-tabs";
 
 import Login from "./screens/Login";
 import Home from "./screens/Home";
 import Profile from "./screens/Profile";
 import Document from "./screens/Document";
+import SearchProviders from "./screens/SearchProviders";
+import Favorites from "./screens/Favorites";
 
 export default createAppContainer(
   createSwitchNavigator({
@@ -13,7 +16,30 @@ export default createAppContainer(
       {
         Home,
         Profile,
-        Document
+        Document,
+        Providers: {
+          screen: createMaterialTopTabNavigator(
+            {
+              SearchProviders,
+              Favorites
+            },
+            {
+              tabBarOptions: {
+                style: {
+                  backgroundColor: "#fff"
+                },
+                activeTintColor: "#be2223",
+                inactiveTintColor: "rgba(0,0,0,0.3)",
+                indicatorStyle: {
+                  backgroundColor: "#be2223"
+                }
+              }
+            }
+          ),
+          navigationOptions: {
+            headerTitle: "Rede Credenciados"
+          }
+        }
       },
       {
         defaultNavigationOptions: {
