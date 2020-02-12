@@ -68,7 +68,7 @@ export default function Home({ navigation }) {
           </Option>
         </Row>
       </Menu>
-      <Logout>
+      <Logout onPress={() => navigation.navigate("Login")}>
         <Icon source={sair} />
         <LogoutText>Sair</LogoutText>
       </Logout>

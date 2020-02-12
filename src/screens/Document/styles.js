@@ -3,11 +3,11 @@ import styled from "styled-components/native";
 export const Container = styled.View`
   flex: 1;
   flex-direction: row;
+  background: #191920;
 `;
 
 export const Header = styled.View`
   height: 100%;
-  background: #be2223;
   width: 120px;
   padding: 20px;
   align-items: center;
@@ -20,44 +20,45 @@ export const Switcher = styled.TouchableOpacity`
 
 export const DocumentView = styled.View`
   flex: 1;
-  align-items: center;
+  margin-left: 70px;
   justify-content: center;
 `;
 
 export const CardFront = styled.ImageBackground`
   justify-content: flex-end;
   padding: 20px;
-  height: 310px;
-  width: 461px;
+  height: 300px;
+  width: 477px;
+`;
+
+export const CardBack = styled.ImageBackground`
+  padding: 20px;
+  height: 300px;
+  width: 477px;
+  flex-direction: row;
+`;
+
+export const CardView = styled.ImageBackground`
+  flex: 1;
+  justify-content: flex-end;
+  margin: 30px 0;
+`;
+
+export const Label = styled.Text`
+  color: #be2223;
+  font-size: 13px;
+`;
+
+export const Span = styled.Text`
+  color: #333;
+  font-size: 15px;
 `;
 
 export const Name = styled.Text`
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  margin: 70px 20px;
-`;
-
-export const Avatar = styled.Image`
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
+  margin: 50px 20px;
 `;
 
 export const Icon = styled.Image``;
-
-export const GoBackButton = styled.TouchableOpacity`
-  width: 50%;
-  margin: 15px;
-  height: 46px;
-  border-radius: 4px;
-  background: #be2223;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const TextButton = styled.Text`
-  color: #fff;
-  font-size: 14px;
-  font-weight: bold;
-`;
