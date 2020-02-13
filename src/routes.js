@@ -9,48 +9,54 @@ import Document from "./screens/Document";
 import SearchProviders from "./screens/SearchProviders";
 import Favorites from "./screens/Favorites";
 
-export default createAppContainer(
-  createSwitchNavigator({
-    Login,
-    App: createStackNavigator(
+export default (signed = false) =>
+  createAppContainer(
+    createSwitchNavigator(
       {
-        Home,
-        Profile,
-        Document,
-        Providers: {
-          screen: createMaterialTopTabNavigator(
-            {
-              SearchProviders,
-              Favorites
-            },
-            {
-              tabBarOptions: {
-                style: {
-                  backgroundColor: "#fff"
+        Login,
+        App: createStackNavigator(
+          {
+            Home,
+            Profile,
+            Document,
+            Providers: {
+              screen: createMaterialTopTabNavigator(
+                {
+                  SearchProviders,
+                  Favorites
                 },
-                activeTintColor: "#be2223",
-                inactiveTintColor: "rgba(0,0,0,0.3)",
-                indicatorStyle: {
-                  backgroundColor: "#be2223"
+                {
+                  tabBarOptions: {
+                    style: {
+                      backgroundColor: "#fff"
+                    },
+                    activeTintColor: "#be2223",
+                    inactiveTintColor: "rgba(0,0,0,0.3)",
+                    indicatorStyle: {
+                      backgroundColor: "#be2223"
+                    }
+                  }
                 }
+              ),
+              navigationOptions: {
+                headerTitle: "Rede Credenciados"
               }
             }
-          ),
-          navigationOptions: {
-            headerTitle: "Rede Credenciados"
+          },
+          {
+            defaultNavigationOptions: {
+              headerStyle: {
+                backgroundColor: "#be2223",
+                height: 120
+              },
+              headerTitle: false,
+              headerTintColor: "#fff"
+            }
           }
-        }
+        )
       },
       {
-        defaultNavigationOptions: {
-          headerStyle: {
-            backgroundColor: "#be2223",
-            height: 120
-          },
-          headerTitle: false,
-          headerTintColor: "#fff"
-        }
+        initialRouteName: signed ? "App" : "Login"
       }
     )
-  })
-);
+  );

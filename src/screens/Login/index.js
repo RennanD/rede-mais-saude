@@ -1,4 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { ActivityIndicator } from "react-native";
+
+import { useDispatch, useSelector } from "react-redux";
+
+import { singInRequest } from "../../store/modules/user/actions";
 
 import {
   Container,
@@ -13,11 +18,20 @@ import {
 
 import background from "../../../assets/images/background-login.jpg";
 import logo from "../../../assets/images/logo/logo-vermelho.png";
+import api from "../../services/api";
 
-export default function Login({ navigation }) {
+export default function Login() {
+  const dispatch = useDispatch();
+  const loading = useSelector(state => state.user.loading);
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   const passwordRef = useRef();
 
-  const { navigate } = navigation;
+  async function handleLogin() {
+    dispatch(singInRequest(username, password));
+  }
 
   return (
     <Background source={background}>
@@ -31,6 +45,8 @@ export default function Login({ navigation }) {
             autoCorrect={false}
             autoCapitalize="none"
             keyboardType="numeric"
+            value={username}
+            onChangeText={setUsername}
             placeholder="Digite seu CPF"
             onSubmitEditing={() => passwordRef.current.focus()}
           />
@@ -38,10 +54,15 @@ export default function Login({ navigation }) {
             label="Senha"
             icon="lock-outline"
             placeholder="Digite sua senha"
+            value={password}
+            onChangeText={setPassword}
             secureTextEntry
             ref={passwordRef}
+            onSubmitEditing={handleLogin}
           />
-          <SubmitButton onPress={() => navigate("App")}>Entrar</SubmitButton>
+          <SubmitButton loading={loading} onPress={handleLogin}>
+            Entrar
+          </SubmitButton>
           <Link onPress={() => {}}>
             <LinkText>Esqueci minha senha</LinkText>
           </Link>
