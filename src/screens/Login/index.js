@@ -18,7 +18,6 @@ import {
 
 import background from "../../../assets/images/background-login.jpg";
 import logo from "../../../assets/images/logo/logo-vermelho.png";
-import api from "../../services/api";
 
 export default function Login() {
   const dispatch = useDispatch();

@@ -17,6 +17,8 @@ import {
   Profile
 } from "./styles";
 
+import ProfileHeader from "../../components/ProfileHeader";
+
 import head from "../../../assets/images/banner-promoções.jpg";
 
 import sair from "../../../assets/images/icons/sair.png";
@@ -77,21 +79,7 @@ export default function Home({ navigation }) {
 }
 
 Home.navigationOptions = ({ navigation }) => ({
-  headerLeft: () => (
-    <Header>
-      <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-        <Avatar
-          source={{
-            uri: "https://avatars3.githubusercontent.com/u/15038553?s=460&v=4"
-          }}
-        />
-      </TouchableOpacity>
-      <View>
-        <Profile>Olá,</Profile>
-        <Profile>Rennan Douglas</Profile>
-      </View>
-    </Header>
-  ),
+  headerLeft: () => <ProfileHeader navigation={navigation} />,
   headerRight: () => (
     <Header>
       <TouchableOpacity>

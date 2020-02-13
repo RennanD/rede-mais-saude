@@ -14,7 +14,7 @@ export default function user(state = INITIAL_STATE, action) {
         break;
       }
       case "@user/SING_IN_SUCCESS": {
-        draft.profile = action.payload;
+        draft.profile = action.payload.profile;
         draft.signed = true;
         draft.loading = false;
         break;

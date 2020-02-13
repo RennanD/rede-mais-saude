@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { ScreenOrientation } from "expo";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useSelector } from "react-redux";
+import { format, parseISO } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 import {
   Container,
@@ -19,6 +22,19 @@ import cardFront from "../../../assets/images/documents/carteirinha-frente.png";
 import cardBack from "../../../assets/images/documents/carteirinha-verso.png";
 
 export default function Document({ navigation }) {
+  const profile = useSelector(state => state.user.profile);
+
+  const dateBorn = format(parseISO(profile.data_nascimento), "dd/MM/yyyy", {
+    locale: ptBR
+  });
+  const dateFormated = format(
+    parseISO(profile.data_inicio_cobertura),
+    "dd/MM/yyyy",
+    {
+      locale: ptBR
+    }
+  );
+
   const [switcher, setSwitcher] = useState(false);
 
   useEffect(() => {
@@ -43,26 +59,26 @@ export default function Document({ navigation }) {
       <DocumentView>
         {!switcher ? (
           <CardFront source={cardFront}>
-            <Name>RENNAN DOUGLAS</Name>
+            <Name>{profile.nome}</Name>
           </CardFront>
         ) : (
           <CardBack source={cardBack}>
             <CardView>
               <Label>BENEFICIÁRIO</Label>
-              <Span>RENNAN DOUGLAS</Span>
+              <Span>{profile.nome_titular}</Span>
 
               <Label>CPF</Label>
-              <Span>000.000.000-00</Span>
+              <Span>{profile.cpf}</Span>
 
               <Label>PARCEIRO</Label>
               <Span>REDE + SAÚDE</Span>
             </CardView>
             <CardView>
               <Label>DATA DE NASCIMENTO</Label>
-              <Span>03/10/1996</Span>
+              <Span>{dateBorn}</Span>
 
               <Label>DATA DE INCULSÃO</Label>
-              <Span>12/02/2020</Span>
+              <Span>{dateFormated}</Span>
             </CardView>
           </CardBack>
         )}

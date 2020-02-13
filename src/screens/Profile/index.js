@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useSelector } from "react-redux";
+
 import {
   Container,
   Footer,
@@ -19,6 +21,8 @@ import {
 import logo from "../../../assets/images/logo/logo-vermelho.png";
 
 export default function Profile({ navigation }) {
+  const profile = useSelector(state => state.user.profile);
+
   return (
     <Container>
       <Header>
@@ -26,27 +30,28 @@ export default function Profile({ navigation }) {
       </Header>
       <Info>
         <Title>Bem vindo(a)!</Title>
-        <Name>Rennan Douglas</Name>
+        <Name>{profile.nome}</Name>
       </Info>
       <Body>
         <Label>Plano</Label>
-        <Content>Individual</Content>
+        <Content>{profile.convenio_tipo_contrato}</Content>
 
         <Label>Documentos</Label>
-        <Content>RG: 1.111.111</Content>
-        <Content>CPF: 000.000.000-00</Content>
+        <Content>CPF: {profile.cpf}</Content>
 
         <Label>Endereço</Label>
-        <Content>Rua Tal</Content>
+        <Content>{profile.endereco}</Content>
 
         <Label>Bairro</Label>
-        <Content>Ininga</Content>
+        <Content>{profile.bairro}</Content>
 
         <Label>Cidade / Estado</Label>
-        <Content>Teresina/ PI</Content>
+        <Content>
+          {profile.cidade}/ {profile.estado}
+        </Content>
 
         <Label>CEP</Label>
-        <Content>64000-00</Content>
+        <Content>{profile.cep}</Content>
       </Body>
       <Footer>
         <Description>

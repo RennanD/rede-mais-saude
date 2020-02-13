@@ -52,6 +52,7 @@ export const Label = styled.Text`
 export const Span = styled.Text`
   color: #333;
   font-size: 15px;
+  text-transform: uppercase;
 `;
 
 export const Name = styled.Text`
@@ -59,6 +60,7 @@ export const Name = styled.Text`
   font-size: 16px;
   font-weight: bold;
   margin: 50px 20px;
+  text-transform: uppercase;
 `;
 
 export const Icon = styled.Image``;
