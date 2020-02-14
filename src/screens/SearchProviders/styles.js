@@ -1,3 +1,5 @@
+import { Platform } from "react-native";
+
 import styled from "styled-components/native";
 import Button from "../../components/Button";
 import Modal from "react-native-modal";
@@ -45,7 +47,10 @@ export const ModalSelect = styled(Modal)`
   justify-content: flex-end;
 `;
 
-export const ModalContent = styled.View`
+export const ModalContent = styled.KeyboardAvoidingView.attrs({
+  enabled: Platform.OS === "ios" ? true : false,
+  behaivor: "padding"
+})`
   background: #fff;
   padding: 20px;
 `;

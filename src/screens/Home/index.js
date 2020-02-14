@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useDispatch } from "react-redux";
+
 import { TouchableOpacity, View } from "react-native";
 
 import {
@@ -30,8 +32,11 @@ import noticias from "../../../assets/images/icons/noticias.png";
 import prescricoes from "../../../assets/images/icons/prescricoes.png";
 import contatos from "../../../assets/images/icons/contatos.png";
 import mensagem from "../../../assets/images/icons/mensagem.png";
+import { singOut } from "../../store/modules/user/actions";
 
 export default function Home({ navigation }) {
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <SliderShow source={head} />
@@ -70,7 +75,7 @@ export default function Home({ navigation }) {
           </Option>
         </Row>
       </Menu>
-      <Logout onPress={() => navigation.navigate("Login")}>
+      <Logout onPress={() => dispatch(singOut())}>
         <Icon source={sair} />
         <LogoutText>Sair</LogoutText>
       </Logout>

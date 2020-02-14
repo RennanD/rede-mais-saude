@@ -8,8 +8,6 @@ import { singInSuccess, singInFailure } from "./actions";
 export function* singIn({ payload }) {
   const { username, password } = payload;
 
-  console.log(username, password);
-
   try {
     let headers = new Headers();
     headers.append(
@@ -25,8 +23,6 @@ export function* singIn({ payload }) {
     );
 
     const responseJson = yield response.json();
-
-    console.log(responseJson.usuario_logado);
 
     yield put(singInSuccess(responseJson.usuario_logado));
   } catch (err) {

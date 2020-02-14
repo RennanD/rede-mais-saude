@@ -17,3 +17,9 @@ export function singInFailure() {
     type: "@user/SING_IN_FAILURE"
   };
 }
+
+export function singOut() {
+  return {
+    type: "@user/SING_OUT"
+  };
+}

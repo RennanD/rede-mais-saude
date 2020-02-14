@@ -23,6 +23,11 @@ export default function user(state = INITIAL_STATE, action) {
         draft.loading = false;
         break;
       }
+      case "@user/SING_OUT": {
+        draft.profile = null;
+        draft.signed = false;
+        break;
+      }
       default:
     }
   });
