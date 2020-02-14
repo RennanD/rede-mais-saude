@@ -8,6 +8,8 @@ import Profile from "./screens/Profile";
 import Document from "./screens/Document";
 import SearchProviders from "./screens/SearchProviders";
 import Favorites from "./screens/Favorites";
+import ListProviders from "./screens/ListProviders";
+import Details from "./screens/Details";
 
 export default (signed = false) =>
   createAppContainer(
@@ -19,6 +21,8 @@ export default (signed = false) =>
             Home,
             Profile,
             Document,
+            ListProviders,
+            Details,
             Providers: {
               screen: createMaterialTopTabNavigator(
                 {

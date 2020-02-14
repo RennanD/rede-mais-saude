@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-
+import Button from "../../components/Button";
 import Modal from "react-native-modal";
 
 export const Container = styled.View`
@@ -12,27 +12,24 @@ export const Content = styled.ScrollView`
 
 export const ItemList = styled.TouchableOpacity`
   height: 70px;
-  border-bottom-width: 1px;
-  border-style: solid;
-  border-color: #bbb;
+
   padding: 15px;
   justify-content: center;
 `;
 
 export const Label = styled.Text`
-  font-size: 16px;
+  font-size: 15px;
   color: #be2223;
   font-weight: bold;
 `;
 
-export const GoBackButton = styled.TouchableOpacity`
-  align-self: stretch;
+export const Select = styled.Text`
+  font-size: 13px;
+  color: #333;
+`;
+
+export const GoBackButton = styled(Button)`
   margin: 15px;
-  height: 46px;
-  border-radius: 4px;
-  background: #be2223;
-  align-items: center;
-  justify-content: center;
 `;
 
 export const TextButton = styled.Text`
@@ -51,4 +48,8 @@ export const ModalSelect = styled(Modal)`
 export const ModalContent = styled.View`
   background: #fff;
   padding: 20px;
+`;
+
+export const ListRegions = styled.ScrollView`
+  padding: 0 10px;
 `;
