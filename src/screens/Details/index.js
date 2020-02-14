@@ -13,7 +13,7 @@ import {
 
 export default function Details({ navigation }) {
   const provider = navigation.getParam("provider");
-  const [currentRegion, setCurrentRegion] = useState({});
+  const [currentRegion, setCurrentRegion] = useState(null);
 
   useEffect(() => {
     async function loadMap() {
@@ -40,7 +40,7 @@ export default function Details({ navigation }) {
     }
 
     loadMap();
-  });
+  }, []);
 
   function handleRegionChanged(rergion) {
     setCurrentRegion(rergion);
@@ -48,10 +48,12 @@ export default function Details({ navigation }) {
 
   return (
     <Container>
-      <MapHeader
-        onRegionChangeComplete={handleRegionChanged}
-        initialRegion={currentRegion}
-      />
+      {currentRegion && (
+        <MapHeader
+          onRegionChangeComplete={handleRegionChanged}
+          initialRegion={currentRegion}
+        />
+      )}
 
       <Header>
         <Title>{provider.prestador}</Title>

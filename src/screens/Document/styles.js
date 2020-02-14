@@ -1,13 +1,13 @@
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-  flex: 1;
   flex-direction: row;
   background: #191920;
+  padding: 20px;
+  padding: 50px 20px;
 `;
 
 export const Header = styled.View`
-  height: 100%;
   width: 120px;
   padding: 20px;
   align-items: center;

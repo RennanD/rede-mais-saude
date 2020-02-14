@@ -17,6 +17,10 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.redemaissaude.redemaissaude",
+      "versionCode": 1
+    },
     "ios": {
       "supportsTablet": true
     }
