@@ -7,9 +7,10 @@ export const Header = styled.View`
 `;
 
 export const Avatar = styled.Image`
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
+  height: 40px;
+  width: 40px;
+  background: #eee;
+  border-radius: 20px;
   border: 2px #eee;
 `;
 
@@ -26,7 +27,7 @@ export const Container = styled.View`
 `;
 
 export const SliderShow = styled.ImageBackground`
-  flex: 1;
+  height: 180px;
 `;
 
 export const Icon = styled.Image``;
@@ -34,6 +35,7 @@ export const Icon = styled.Image``;
 export const Menu = styled.View`
   flex: 1;
   align-items: center;
+  justify-content: center;
 `;
 
 export const Row = styled.View`
@@ -47,18 +49,19 @@ export const Option = styled.TouchableOpacity`
   border-radius: 10px;
   border: 2px solid #eee;
   height: 100px;
-  width: 120px;
+  width: 90px;
   margin: 10px 5px;
 `;
 
 export const Label = styled.Text`
   color: #fff;
   margin-top: 7px;
-  font-size: 14px;
+  font-size: 12px;
+  text-align: justify;
 `;
 
 export const Logout = styled.TouchableOpacity`
-  height: 60px;
+  height: 40px;
   background: #fff;
   border-radius: 4px;
   align-items: center;
@@ -69,6 +72,6 @@ export const Logout = styled.TouchableOpacity`
 export const LogoutText = styled.Text`
   margin-left: 10px;
   color: #9b0103;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 `;

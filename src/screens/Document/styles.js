@@ -3,12 +3,12 @@ import styled from "styled-components/native";
 export const Container = styled.View`
   flex-direction: row;
   background: #191920;
-  padding: 20px;
-  padding: 50px 20px;
+  padding: 30px 0px;
+  flex: 1;
 `;
 
 export const Header = styled.View`
-  width: 120px;
+  width: 100px;
   padding: 20px;
   align-items: center;
   justify-content: space-between;
@@ -20,21 +20,22 @@ export const Switcher = styled.TouchableOpacity`
 
 export const DocumentView = styled.View`
   flex: 1;
-  margin-left: 70px;
+  margin-left: 20px;
   justify-content: center;
+  align-items: center;
 `;
 
 export const CardFront = styled.ImageBackground`
   justify-content: flex-end;
   padding: 20px;
-  height: 300px;
-  width: 477px;
+  height: 250px;
+  width: 400px;
 `;
 
 export const CardBack = styled.ImageBackground`
   padding: 20px;
-  height: 300px;
-  width: 477px;
+  height: 250px;
+  width: 400px;
   flex-direction: row;
 `;
 

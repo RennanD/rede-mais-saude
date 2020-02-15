@@ -5,54 +5,55 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const Header = styled.View`
-  height: 140px;
+  height: 100px;
   padding: 0 15px;
   justify-content: flex-end;
 `;
 
 export const Info = styled.View`
-  height: 120px;
+  height: 50px;
   padding: 0 15px;
   justify-content: center;
+  margin-top: 5px;
 `;
 
 export const Title = styled.Text`
-  font-size: 24px;
+  font-size: 18px;
   color: #333;
   font-weight: bold;
 `;
 
 export const Name = styled.Text`
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color: #be2223;
 `;
 
 export const Logo = styled.Image``;
 
-export const Body = styled.View`
+export const Body = styled.ScrollView`
   flex: 1;
   padding: 15px;
   margin-top: 15px;
 `;
 
 export const Label = styled.Text`
-  font-size: 14px;
+  font-size: 12px;
   color: #777;
   margin-top: 10px;
 `;
 
 export const Content = styled.Text`
-  font-size: 20px;
+  font-size: 14px;
   color: #be2223;
 `;
 
 export const Footer = styled.View`
-  padding: 30px 15px;
+  padding: 20px 15px;
 `;
 
 export const Description = styled.Text`
-  font-size: 14px;
+  font-size: 12px;
   color: #be2223;
 `;
 

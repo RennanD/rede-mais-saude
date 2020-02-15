@@ -5,7 +5,6 @@ export const Container = styled.ScrollView`
 `;
 
 export const ItemList = styled.TouchableOpacity`
-  height: 70px;
   padding: 15px;
   justify-content: center;
   border: 1px solid #eee;

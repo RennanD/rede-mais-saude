@@ -18,14 +18,16 @@ export default function Details({ navigation }) {
   useEffect(() => {
     async function loadMap() {
       const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${provider.bairro}&key=AIzaSyDonBd0lJhMRQUtV59IwSI1jzk4n86AJPE`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${provider.cep}&key=AIzaSyDonBd0lJhMRQUtV59IwSI1jzk4n86AJPE`
       );
 
       const respJson = await response.json();
 
       const resultJson = respJson.results.map(
-        result => result.geometry.location
+        result => result.geometry.viewport.northeast
       );
+
+      console.log(resultJson);
 
       const [result] = resultJson;
 
@@ -58,6 +60,10 @@ export default function Details({ navigation }) {
       <Header>
         <Title>{provider.prestador}</Title>
         <Subtitle>{provider.bairro}</Subtitle>
+        <Subtitle>
+          {provider.cidade} - {provider.uf}
+        </Subtitle>
+        <Subtitle>{provider.especialidade}</Subtitle>
       </Header>
       <Options>
         <Action>

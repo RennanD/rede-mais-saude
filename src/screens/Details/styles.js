@@ -14,13 +14,13 @@ export const Header = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color: #be2223;
 `;
 
 export const Subtitle = styled.Text`
-  font-size: 20px;
+  font-size: 14px;
   color: #333;
 `;
 
@@ -40,6 +40,6 @@ export const Action = styled.TouchableOpacity`
 `;
 
 export const MapHeader = styled(MapView)`
-  height: 300px;
+  flex: 1;
   background: #ddd;
 `;

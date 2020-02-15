@@ -52,14 +52,13 @@ export default function Profile({ navigation }) {
 
         <Label>CEP</Label>
         <Content>{profile.cep}</Content>
-      </Body>
-      <Footer>
+
         <Description>
           Para qualquer alteração cadastral, ligue para nossa Central de
           Atendimento no:
         </Description>
         <Description>0800</Description>
-      </Footer>
+      </Body>
       <GoBackButton onPress={() => navigation.goBack()}>
         <TextButton>Voltar</TextButton>
       </GoBackButton>

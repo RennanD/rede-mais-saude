@@ -11,6 +11,10 @@ export default function ListProviders({ navigation }) {
         <ItemList onPress={() => navigation.navigate("Details", { provider })}>
           <Label>{provider.prestador}</Label>
           <Select>{provider.central_atendimento}</Select>
+          <Select>
+            {provider.cidade} - {provider.uf}
+          </Select>
+          <Select>{provider.especialidade}</Select>
         </ItemList>
       ))}
     </Container>
