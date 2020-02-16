@@ -27,8 +27,6 @@ export default function Details({ navigation }) {
         result => result.geometry.viewport.northeast
       );
 
-      console.log(resultJson);
-
       const [result] = resultJson;
 
       const { lat, lng } = result;
@@ -44,18 +42,9 @@ export default function Details({ navigation }) {
     loadMap();
   }, []);
 
-  function handleRegionChanged(rergion) {
-    setCurrentRegion(rergion);
-  }
-
   return (
     <Container>
-      {currentRegion && (
-        <MapHeader
-          onRegionChangeComplete={handleRegionChanged}
-          initialRegion={currentRegion}
-        />
-      )}
+      {currentRegion && <MapHeader initialRegion={currentRegion} />}
 
       <Header>
         <Title>{provider.prestador}</Title>

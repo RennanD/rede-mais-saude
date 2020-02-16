@@ -3,8 +3,8 @@ import styled from "styled-components/native";
 export const Container = styled.View`
   flex-direction: row;
   background: #191920;
-  padding: 30px 0px;
-  flex: 1;
+  padding: 20px;
+  padding: 50px 20px;
 `;
 
 export const Header = styled.View`
@@ -22,7 +22,6 @@ export const DocumentView = styled.View`
   flex: 1;
   margin-left: 20px;
   justify-content: center;
-  align-items: center;
 `;
 
 export const CardFront = styled.ImageBackground`

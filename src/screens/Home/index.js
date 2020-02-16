@@ -2,7 +2,7 @@ import React from "react";
 
 import { useDispatch } from "react-redux";
 
-import { TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View, Image } from "react-native";
 
 import {
   Container,
@@ -14,14 +14,17 @@ import {
   Icon,
   Logout,
   LogoutText,
-  Avatar,
   Header,
-  Profile
+  IconView,
+  HeadImage,
+  HeadLabel,
+  HeadText
 } from "./styles";
 
 import ProfileHeader from "../../components/ProfileHeader";
 
-import head from "../../../assets/images/banner-promoções.jpg";
+import head from "../../../assets/images/promo.png";
+import head2 from "../../../assets/images/welcome.png";
 
 import sair from "../../../assets/images/icons/sair.png";
 
@@ -39,38 +42,63 @@ export default function Home({ navigation }) {
 
   return (
     <Container>
-      <SliderShow source={head} />
+      <SliderShow autoplay>
+        <HeadImage source={head}>
+          <HeadText>Encontre médicos, clínicas e farmácias.</HeadText>
+          <HeadLabel>
+            Faça uma busca mais próxima de onde você estiver
+          </HeadLabel>
+        </HeadImage>
+        <HeadImage source={head2}>
+          <HeadText>Encontre médicos, clínicas e farmácias.</HeadText>
+          <HeadLabel>
+            Faça uma busca mais próxima de onde você estiver
+          </HeadLabel>
+        </HeadImage>
+      </SliderShow>
       <Menu>
         <Row>
           <Option onPress={() => navigation.navigate("Providers")}>
-            <Icon source={credenciados} />
+            <IconView>
+              <Icon source={credenciados} />
+            </IconView>
             <Label>Redes credenciadas</Label>
           </Option>
 
           <Option onPress={() => navigation.navigate("Document")}>
-            <Icon source={carteirinha} />
+            <IconView>
+              <Icon source={carteirinha} />
+            </IconView>
             <Label>Carteirinha virtual</Label>
           </Option>
 
           <Option>
-            <Icon source={manuais} />
+            <IconView>
+              <Icon source={manuais} />
+            </IconView>
             <Label>Manuais e Documentos</Label>
           </Option>
         </Row>
 
         <Row>
           <Option>
-            <Icon source={noticias} />
+            <IconView>
+              <Icon source={noticias} />
+            </IconView>
             <Label>Notícias</Label>
           </Option>
 
           <Option>
-            <Icon source={prescricoes} />
+            <IconView>
+              <Icon source={prescricoes} />
+            </IconView>
             <Label>Prescrições</Label>
           </Option>
 
           <Option>
-            <Icon source={contatos} />
+            <IconView>
+              <Icon source={contatos} />
+            </IconView>
             <Label>Contatos</Label>
           </Option>
         </Row>

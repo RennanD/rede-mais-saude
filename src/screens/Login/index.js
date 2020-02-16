@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { ActivityIndicator } from "react-native";
 
 import { useDispatch, useSelector } from "react-redux";
 
