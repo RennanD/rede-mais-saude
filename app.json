@@ -22,7 +22,8 @@
       "versionCode": 1
     },
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.redemaissaude.redemaissaude",
+      "buildNumber": "1.0.0"
     }
   }
 }
